@@ -67,9 +67,16 @@ function reducer(state = initialState, action) {
         error: '',
         isloading: false
       }  
-      
+      case ADD_SMURF_FAIL:
+        return {
+          ...state,
+          error: action.payload,
+          isloading:false
+        }
     
     default:
       return state;
   }
 }
+
+export default reducer;
