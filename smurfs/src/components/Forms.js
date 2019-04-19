@@ -5,14 +5,14 @@ import { addSmurf } from '../actions';
 class Forms extends Component {
 
 state={
-  smurf:{
+
     name:'',
     age:'',
     height:'',
     id: '',
     isloading: false,
     error: null
-  }
+
 }
 
 
@@ -24,7 +24,7 @@ componentDidMount(){
 
 
 handleChange = e => {
-  console.log(e.target.name, e.target.value, 'in handleChange',this.state.smurf)
+  console.log(e.target.name, e.target.value, 'in handleChange',this.state)
   this.setState({
     [e.target.name]:e.target.value
   })
@@ -32,7 +32,7 @@ handleChange = e => {
 
 addSmurf = e => {
  e.preventDefault();
- this.props.addSmurf(this.state.smurf);
+ this.props.addSmurf(this.state);
  this.setState({
   name:'',
   age:'',
@@ -44,8 +44,8 @@ addSmurf = e => {
 }
 
   render() {
-    console.log('in render', this.state.smurf)
-    const { name, age, height } = this.state.smurf;
+    console.log('in render', this.state)
+    const { name, age, height } = this.state;
     return (
       <form onSubmit = {this.addSmurf} >
         <input 
