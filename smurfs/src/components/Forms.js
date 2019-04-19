@@ -24,7 +24,7 @@ componentDidMount(){
 
 
 handleChange = e => {
-  console.log(e.target.name, e.target.value, 'in handleChange',this.state)
+  // console.log(e.target.name, e.target.value, 'in handleChange',this.state)
   this.setState({
     [e.target.name]:e.target.value
   })
@@ -44,7 +44,7 @@ addSmurf = e => {
 }
 
   render() {
-    console.log('in render', this.state)
+    // console.log('in render', this.state)
     const { name, age, height } = this.state;
     return (
       <form onSubmit = {this.addSmurf} >
@@ -77,7 +77,7 @@ addSmurf = e => {
   }
 }
 const mapStateToProps = state => {
- (console.log('from form map ', state))
+//  (console.log('from form map ', state))
   return{
   name: state.smurfs.name,
   age: state.smurfs.age,

@@ -16,7 +16,7 @@ class Smurfs extends Component {
 
 
   render() {
-      console.log('inside Smurfs, ', this.props.smurfs)
+    //   console.log('inside Smurfs, ', this.props.smurfs)
       
     return (
       <div>

@@ -37,15 +37,6 @@ class App extends Component {
   }
 }
 
-// const mapStateToProps = state => ({
-//   name: state.smurfs.name,
-//   age: state.smurfs.age,
-//   height: state.smurfs.height,
-//   id: state.smurfs.id,
-//   isloading: state.smurfs.isloading,
-//   error:state.smurfs.error
-// })
-
 export default connect(
   null, { getSmurfs, addSmurf }
 )(App);
