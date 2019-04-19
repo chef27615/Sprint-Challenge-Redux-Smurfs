@@ -78,9 +78,8 @@ function reducer(state = initialState, action) {
     case DELETE_SMURF_SUCCESS:
         return {
           ...state,
-          smurfs: state.smurfs.filter((smurf, id) => {
-            return id !==action.payload
-          }),
+
+          smurfs: action.payload,
           isloading: false,
           error: ''
         }

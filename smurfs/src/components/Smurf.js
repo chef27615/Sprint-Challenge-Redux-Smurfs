@@ -8,6 +8,8 @@ class Smurf extends Component {
   componentDidMount(){
       this.props.deleteSmurf()
   }
+
+  
     render() {
       console.log('inside smurf', this.props)
 
@@ -18,7 +20,7 @@ class Smurf extends Component {
         <p>{age}</p>
         <p>{height}</p>
         <button
-            onClick={()=>deleteSmurf(id)}
+            onClick={()=>this.props.deleteSmurf(id)}
         >Gargamel</button>
       </div>
     )
@@ -26,9 +28,12 @@ class Smurf extends Component {
 }
 
 const mapStateToProps = state => {
+    (console.log('map-inside-smurf-map, ', state))
     return{
-        smurfs: state
-    }
+    deleteSmurf: state.deleteSmurf,
+    smurfs: state.smurfs}
 }
+    
+
 
 export default connect(mapStateToProps, {deleteSmurf} )(Smurf);
