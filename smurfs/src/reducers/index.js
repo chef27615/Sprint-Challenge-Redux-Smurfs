@@ -32,7 +32,7 @@ const initialState = {
       height: '',
       id: Date.now(),
       isloading:false,
-      error: ''
+      error: null
     }
   ]
 };

@@ -9,7 +9,7 @@ export default class Smurf extends Component {
       const {age, height, name}= this.props.smurf;
     return (
       <div>
-        <p>{name}</p>
+        <h2>{name}</h2>
         <p>{age}</p>
         <p>{height}</p>
       </div>
