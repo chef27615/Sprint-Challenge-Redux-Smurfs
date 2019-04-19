@@ -22,7 +22,7 @@ class App extends Component {
   
   render() {
 
-    console.log('smurfs: ', this.props)
+    // console.log('smurfs: ', this.props)
 
     return (
       <div className="App">

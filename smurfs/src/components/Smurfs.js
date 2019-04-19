@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { getSmurfs, addSmurf } from "../actions";
+import { getSmurfs  } from "../actions";
 import { connect } from 'react-redux';
-
+import Smurf from './Smurf';
 
 
 
@@ -16,13 +16,11 @@ class Smurfs extends Component {
 
 
   render() {
-      console.log('Smurfs, ', this.props)
+      console.log('inside Smurfs, ', this.props.smurfs)
       
     return (
       <div>
-        {/* {props.smurfs.map((smurf, id)=>{
-            <p>{smurf.name}</p>
-        })} */}
+        {this.props.smurfs.map((smurf, id) => <Smurf smurf={smurf} key={id} />)}
       </div>
     )
   }
@@ -31,7 +29,8 @@ class Smurfs extends Component {
 
 
 const mapStateToProps = state => ({
-    Smurfs: state.smurfs
+    getSmurfs: state.getSmurfs,
+    smurfs: state.smurfs
 })
 
-export default connect(mapStateToProps, { getSmurfs, addSmurf })(Smurfs);
+export default connect(mapStateToProps, { getSmurfs })(Smurfs);

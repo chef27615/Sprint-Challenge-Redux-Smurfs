@@ -12,8 +12,15 @@ state={
   }
 }
 
+componentDidMount(){
+  this.props.addSmurf()
+}
+
+
+
+
 handleChange = e => {
-  console.log(e.target.name, e.target.value)
+  console.log(e.target.name, e.target.value, this.state.smurf.name)
   this.setState({
     [e.target.name]:e.target.value
   })
@@ -63,8 +70,13 @@ addSmurf = e => {
 }
 const mapStateToProps = state => {
   return{
-    smurfs: state.smurfs
+    name: state.smurfs.name,
+  age: state.smurfs.age,
+  height: state.smurfs.height,
+  id: state.smurfs.id,
+  isloading: state.smurfs.isloading,
+  error:state.smurfs.error
   }
 }
 
-export default connect(mapStateToProps, { addSmurf })(Forms)
+export default connect(mapStateToProps, { addSmurf })(Forms);
