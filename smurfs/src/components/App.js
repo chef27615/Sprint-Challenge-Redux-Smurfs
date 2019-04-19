@@ -14,12 +14,17 @@ import { getSmurfs, addSmurf } from '../actions';
  */
 class App extends Component {
   state={
-    smurfs:[] 
+    smurf:[] 
   }
+componentDidMount(){
+  this.props.getSmurfs();
+}
+
+
 
   render() {
 
-    console.log(this.props.smurfs)
+    console.log(this.props)
 
     return (
       <div className="App">
@@ -27,15 +32,7 @@ class App extends Component {
         <div>Welcome to your Redux version of Smurfs!</div>
         <div>Start inside of your `src/index.js` file!</div>
         <div>Have fun!</div>
-        {
-          this.props.smurfs.map((smurf, id) => {
-            <div>
-              <p>{smurf.name}</p>
-              <p>{smurf.age}</p>
-              <p>{smurf.height}</p>
-            </div>
-          })
-        }
+        
       </div>
     );
   }
@@ -52,4 +49,4 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps, { getSmurfs, addSmurf }
-)(App)
+)(App);
